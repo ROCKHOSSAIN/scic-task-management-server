@@ -57,12 +57,12 @@ async function run() {
     })
     app.get('/tasksCollection',async(req,res)=>{
         const cursor = alltaskcollection.find();
-        const result = await cursor.toArray(cursor)
+        const result = await cursor.toArray(cursor);
         res.send(result);
     })
-
-
     await client.db("admin").command({ ping: 1 });
+
+
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
